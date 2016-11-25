@@ -14,6 +14,7 @@ const devSer = (done) => {
     browserSync.init({
         port: 3000,
         host: 'localhost',
+        // index: 'frame/demo/index.html',
         open: 'external',
         files: ['./**/*.html','./**/*.js','./**/*.css','./**/*.png','./**/*.jpg'],
         server: {

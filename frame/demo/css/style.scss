@@ -24,7 +24,25 @@ body {
     height: px2rem(1334px);
     background-size: px2rem(750px) px2rem(1334px);
     background-repeat: no-repeat;
+    background-color: #f5f5f5;
 }
+header{
+    width: px2rem(750px);
+    height: px2rem(189px);
+    background-color: #289bf0;
+}
+section{
+    margin: px2rem(20px) px2rem(16px);
+    height: px2rem(500px);
+    background-color: #FFF;
+    @include font-dpr(15px);
+    color: #289bf0;
+}
+
+
+
+
+
 .blank-page {
     height: 100%;
     width: 100%;

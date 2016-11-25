@@ -3,7 +3,24 @@ body {
   width: 10rem;
   height: 17.78667rem;
   background-size: 10rem 17.78667rem;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-color: #f5f5f5; }
+
+header {
+  width: 10rem;
+  height: 2.52rem;
+  background-color: #289bf0; }
+
+section {
+  margin: 0.26667rem 0.21333rem;
+  height: 6.66667rem;
+  background-color: #FFF;
+  font-size: 15px;
+  color: #289bf0; }
+  [data-dpr="2"] section {
+    font-size: 30px; }
+  [data-dpr="3"] section {
+    font-size: 45px; }
 
 .blank-page {
   height: 100%;
