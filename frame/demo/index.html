@@ -44,29 +44,42 @@
         
     </header>
     <section>
-        重点关注
+        <div>重点关注</div>
     </section>
-    <div id="test">
+    <!-- <div id="test">
         <div class="one">one</div>
         <div class="two">two</div>
-    </div>
+    </div> -->
 
 
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/hammer.min.js"></script>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
     <script type="text/javascript">
     $(function(argument) {
-        delete Hammer.defaults.cssProps.userSelect;
-        var hammerTest = new Hammer(document.getElementById('test'));
-        hammerTest.get('pinch').set({
-            enable: true
+        // delete Hammer.defaults.cssProps.userSelect;
+        // var hammerTest = new Hammer(document.getElementById('test'));
+        // hammerTest.get('pinch').set({
+        //     enable: true
+        // });
+        // hammerTest.get('rotate').set({
+        //     enable: true
+        // });
+        // hammerTest.on('pan panstart panmove panend pancancel panleft panright panup pandown swipe swipeleft swiperight swipeup swipedown tap doubletap press pressup rotate rotatestart rotatemove rotateend rotatecancel pinch pinchstart pinchmove pinchend pinchcancel pinchin pinchout', function(ev) {
+        //     console.log(ev.type);
+        // });
+        // TweenPlugin.activate([BezierPlugin,CSSPlugin]);
+        $('div').click(function(event) {
+            // var tween = TweenMax.to($(this),1,{x:200,y:300,repeat:-1,yoyo:true,ease:Elastic.easeOut});
+            var tween = TweenMax.to($(this),3, {bezier:{type:"cubic", values:[{x:100, y:250}, {x:150, y:100}, {x:300, y:500}, {x:500, y:400}], autoRotate:["x","y","rotation",45,false]}, ease:Power1.easeInOut});
+            // var beziers = BezierPlugin.bezierThrough([{x:0, y:0}, {x:250, y:400}, {x:500, y:0}], 1, true);
+            // var bx = beziers.x; //the "x" Beziers
+            // var by = beziers.y; //the "y" Beziers
+            // console.log(bx)
+            // console.log(by)
+            // var tween = TweenMax.to($(this),3, {x:500, y:0, bezierThrough:{type:"cubic", values:[{x:100, y:250}, {x:300, y:0}, {x:500, y:400}]}});
         });
-        hammerTest.get('rotate').set({
-            enable: true
-        });
-        hammerTest.on('pan panstart panmove panend pancancel panleft panright panup pandown swipe swipeleft swiperight swipeup swipedown tap doubletap press pressup rotate rotatestart rotatemove rotateend rotatecancel pinch pinchstart pinchmove pinchend pinchcancel pinchin pinchout', function(ev) {
-            console.log(ev.type);
-        });
+        
     })
         
     </script>
