@@ -1,30 +1,8 @@
-@function px2rem($px, $base-font-size: 64px) {
-    @if (unitless($px)) {
-        @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
-        @return px2rem($px + 0px); // That may fail.
-    } @else if (unit($px) == rem) {
-        @return $px;
-    }
-    @return ($px / $base-font-size) * 1rem;
-}
-/* font-size px*/
-@mixin font-dpr($font-size){
-    font-size: $font-size;
-
-    [data-dpr="2"] & {
-        font-size: $font-size * 2;
-    }
-
-    [data-dpr="3"] & {
-        font-size: $font-size * 3;
-    }
-}
-
 html{
     height: 100%;
     body{
         width: 100%;
-        max-width: px2rem(640px)!important;
+        max-width: 750px!important;
         margin: 0 auto;
         height: 100%;
         -webkit-transform: translate3d(0, 0, 0);
@@ -65,39 +43,40 @@ html{
         background-color: #0ff;
     }
 }
+// page1
 .text-title{
-    width: px2rem(512px);
-    height: px2rem(278px);
+    width: 512px;
+    height: 278px;
     position: absolute;
     z-index: 2;
     left: 50%;
-    top: px2rem(60px);
+    top: 60px;
     -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0);
     .text-1{
-        width: px2rem(512px);
-        height: px2rem(230px);
+        width: 512px;
+        height: 230px;
         background-position: center bottom;
         background-repeat: no-repeat;
         background-image: url(../images/text-1.png); 
-        -webkit-background-size: px2rem(512px) px2rem(230px);
-        background-size: px2rem(512px) px2rem(230px);
+        -webkit-background-size: 512px 230px;
+        background-size: 512px 230px;
         opacity: 0;
     }
     .text-2{
-        width: px2rem(512px);
-        height: px2rem(48px);
+        width: 512px;
+        height: 48px;
         background-position: center bottom;
         background-repeat: no-repeat;
         background-image: url(../images/text-2.png); 
-        -webkit-background-size: px2rem(512px) px2rem(48px);
-        background-size: px2rem(512px) px2rem(48px);
+        -webkit-background-size: 512px 48px;
+        background-size: 512px 48px;
         opacity: 0;
     }
 }
 .box-wrap{
-    width: px2rem(581px);
-    height: px2rem(504px);
+    width: 581px;
+    height: 504px;
     position: absolute;
     z-index: 1;
     bottom: 0;
@@ -112,18 +91,18 @@ html{
         top: 0;
         .box-1{
             position: absolute;
-            bottom: px2rem(90px);
+            bottom: 90px;
             left: 150%;
             opacity: 0;
             -webkit-transform: translate(-50%,0);
             transform: translate(-50%,0);
-            width: px2rem(314px);
-            height: px2rem(344px);
+            width: 314px;
+            height: 344px;
             background-position: center bottom;
             background-repeat: no-repeat;
             background-image: url(../images/box-1.png);
-            -webkit-background-size: px2rem(314px) px2rem(344px);
-            background-size: px2rem(314px) px2rem(344px);
+            -webkit-background-size: 314px 344px;
+            background-size: 314px 344px;
             &.shake{
                 -webkit-animation:shake 1s infinite;
                 animation:shake 1s infinite;
@@ -136,13 +115,13 @@ html{
             display: none;
             -webkit-transform: translate(-50%,0);
             transform: translate(-50%,0);
-            width: px2rem(477px);
-            height: px2rem(115px);
+            width: 477px;
+            height: 115px;
             background-position: center bottom;
             background-repeat: no-repeat;
             background-image: url(../images/box-1-sd.png);
-            -webkit-background-size: px2rem(477px) px2rem(115px);
-            background-size: px2rem(477px) px2rem(115px);
+            -webkit-background-size: 477px 115px;
+            background-size: 477px 115px;
         }
     }
     .page-box-2{
@@ -158,19 +137,19 @@ html{
         -webkit-background-size: 100% 100%;
         background-size: 100% 100%;
         .box-top{
-            width: px2rem(330px);
-            height: px2rem(330px);
+            width: 330px;
+            height: 330px;
             position: absolute;
-            left: px2rem(116px);
-            top: px2rem(40px);
+            left: 116px;
+            top: 40px;
             -webkit-transform:rotate(-40deg);
             transform:rotate(-40deg);
             &.shadow{
                 background-position: center bottom;
                 background-repeat: no-repeat;
                 background-image: url(../images/box-top-sd.png); 
-                -webkit-background-size: px2rem(330px) px2rem(330px);
-                background-size: px2rem(330px) px2rem(330px);
+                -webkit-background-size: 330px 330px;
+                background-size: 330px 330px;
             }
             .box-top-main{
                 width: 100%;
@@ -184,193 +163,193 @@ html{
             }
         } 
         .ribbon-wrap{
-            width: px2rem(100px);
-            height: px2rem(100px);
+            width: 100px;
+            height: 100px;
             position: relative;
-            margin: px2rem(80px) auto 0;
+            margin: 80px auto 0;
             .ribbon{
                 position: absolute;
                 left: 0;
                 bottom: 0;
                 -webkit-transform: scale(0.1);
                 transform: scale(0.1);
+                opacity: 0;
                 -webkit-background-size: 100% 100%;
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
                 background-position: center center;
-                opacity: 0;
                 -webkit-transform-origin: center bottom;
                 transform-origin: center bottom;
                 z-index: 1;
                 &.ribbon-1{
-                    width: px2rem(129px);
-                    height: px2rem(300px);
+                    width: 129px;
+                    height: 300px;
                     background-image: url(../images/ribbon-1.png);
                     z-index: 2; 
                 }
                 &.ribbon-2{
-                    width: px2rem(92px);
-                    height: px2rem(181px);
+                    width: 92px;
+                    height: 181px;
                     background-image: url(../images/ribbon-2.png); 
                 }
                 &.ribbon-3{
-                    width: px2rem(134px);
-                    height: px2rem(93px);
+                    width: 134px;
+                    height: 93px;
                     background-image: url(../images/ribbon-3.png); 
                 }
                 &.ribbon-4{
-                    width: px2rem(106px);
-                    height: px2rem(179px);
+                    width: 106px;
+                    height: 179px;
                     background-image: url(../images/ribbon-4.png); 
                 }
                 &.ribbon-5{
-                    width: px2rem(236px);
-                    height: px2rem(265px);
+                    width: 236px;
+                    height: 265px;
                     background-image: url(../images/ribbon-5.png); 
                 }
                 &.ribbon-6{
-                    width: px2rem(49px);
-                    height: px2rem(49px);
+                    width: 49px;
+                    height: 49px;
                     background-image: url(../images/ribbon-6.png); 
                 }
                 &.ribbon-7{
-                    width: px2rem(30px);
-                    height: px2rem(29px);
+                    width: 30px;
+                    height: 29px;
                     background-image: url(../images/ribbon-7.png); 
                 }
                 &.ribbon-8{
-                    width: px2rem(76px);
-                    height: px2rem(59px);
+                    width: 76px;
+                    height: 59px;
                     background-image: url(../images/ribbon-8.png); 
                 }
                 &.ribbon-9{
-                    width: px2rem(17px);
-                    height: px2rem(18px);
+                    width: 17px;
+                    height: 18px;
                     background-image: url(../images/ribbon-9.png); 
                 }
                 &.ribbon-10{
-                    width: px2rem(18px);
-                    height: px2rem(18px);
+                    width: 18px;
+                    height: 18px;
                     background-image: url(../images/ribbon-10.png); 
                 }
                 &.ribbon-11{
-                    width: px2rem(20px);
-                    height: px2rem(22px);
+                    width: 20px;
+                    height: 22px;
                     background-image: url(../images/ribbon-11.png); 
                 }
                 &.ribbon-12{
-                    width: px2rem(26px);
-                    height: px2rem(31px);
+                    width: 26px;
+                    height: 31px;
                     background-image: url(../images/ribbon-12.png); 
                 }
                 &.ribbon-13{
-                    width: px2rem(24px);
-                    height: px2rem(37px);
+                    width: 24px;
+                    height: 37px;
                     background-image: url(../images/ribbon-13.png); 
                 }
                 &.ribbon-14{
-                    width: px2rem(25px);
-                    height: px2rem(33px);
+                    width: 25px;
+                    height: 33px;
                     background-image: url(../images/ribbon-14.png); 
                 }
                 &.ribbon-15{
-                    width: px2rem(29px);
-                    height: px2rem(29px);
+                    width: 29px;
+                    height: 29px;
                     background-image: url(../images/ribbon-15.png); 
                 }
                 &.ribbon-16{
-                    width: px2rem(19px);
-                    height: px2rem(34px);
+                    width: 19px;
+                    height: 34px;
                     background-image: url(../images/ribbon-16.png); 
                 }
                 &.ribbon-17{
-                    width: px2rem(33px);
-                    height: px2rem(26px);
+                    width: 33px;
+                    height: 26px;
                     background-image: url(../images/ribbon-17.png); 
                 }
                 &.ribbon-18{
-                    width: px2rem(19px);
-                    height: px2rem(34px);
+                    width: 19px;
+                    height: 34px;
                     background-image: url(../images/ribbon-18.png); 
                 }
                 &.ribbon-19{
-                    width: px2rem(20px);
-                    height: px2rem(20px);
+                    width: 20px;
+                    height: 20px;
                     background-image: url(../images/ribbon-19.png); 
                 }
                 &.ribbon-20{
-                    width: px2rem(28px);
-                    height: px2rem(17px);
+                    width: 28px;
+                    height: 17px;
                     background-image: url(../images/ribbon-20.png); 
                 }
                 &.ribbon-21{
-                    width: px2rem(35px);
-                    height: px2rem(22px);
+                    width: 35px;
+                    height: 22px;
                     background-image: url(../images/ribbon-21.png); 
                 }
                 &.ribbon-22{
-                    width: px2rem(34px);
-                    height: px2rem(37px);
+                    width: 34px;
+                    height: 37px;
                     background-image: url(../images/ribbon-22.png); 
                 }
                 &.ribbon-23{
-                    width: px2rem(21px);
-                    height: px2rem(45px);
+                    width: 21px;
+                    height: 45px;
                     background-image: url(../images/ribbon-23.png); 
                 }
                 &.ribbon-24{
-                    width: px2rem(13px);
-                    height: px2rem(20px);
+                    width: 13px;
+                    height: 20px;
                     background-image: url(../images/ribbon-24.png); 
                 }
                 &.ribbon-25{
-                    width: px2rem(20px);
-                    height: px2rem(25px);
+                    width: 20px;
+                    height: 25px;
                     background-image: url(../images/ribbon-25.png); 
                 }
                 &.ribbon-26{
-                    width: px2rem(16px);
-                    height: px2rem(58px);
+                    width: 16px;
+                    height: 58px;
                     background-image: url(../images/ribbon-26.png); 
                 }
                 &.ribbon-27{
-                    width: px2rem(44px);
-                    height: px2rem(39px);
+                    width: 44px;
+                    height: 39px;
                     background-image: url(../images/ribbon-27.png); 
                 }
                 &.ribbon-28{
-                    width: px2rem(30px);
-                    height: px2rem(60px);
+                    width: 30px;
+                    height: 60px;
                     background-image: url(../images/ribbon-28.png); 
                 }
                 &.ribbon-29{
-                    width: px2rem(57px);
-                    height: px2rem(77px);
+                    width: 57px;
+                    height: 77px;
                     background-image: url(../images/ribbon-29.png); 
                 }
                 &.ribbon-30{
-                    width: px2rem(12px);
-                    height: px2rem(11px);
+                    width: 12px;
+                    height: 11px;
                     background-image: url(../images/ribbon-30.png); 
                 }
                 &.ribbon-31{
-                    width: px2rem(27px);
-                    height: px2rem(54px);
+                    width: 27px;
+                    height: 54px;
                     background-image: url(../images/ribbon-31.png); 
                 }
                 &.ribbon-32{
-                    width: px2rem(62px);
-                    height: px2rem(55px);
+                    width: 62px;
+                    height: 55px;
                     background-image: url(../images/ribbon-32.png); 
                 }
                 &.ribbon-33{
-                    width: px2rem(37px);
-                    height: px2rem(57px);
+                    width: 37px;
+                    height: 57px;
                     background-image: url(../images/ribbon-33.png); 
                 }
                 &.ribbon-34{
-                    width: px2rem(10px);
-                    height: px2rem(9px);
+                    width: 10px;
+                    height: 9px;
                     background-image: url(../images/ribbon-34.png); 
                 }
             }
@@ -462,7 +441,75 @@ html{
         transform: translate(-50%,0) rotate(0deg);
     }
 } 
-
+// page2
+.barrage-wrap{
+    width: 100%;
+    height: 800px;
+    span{
+        position: absolute;
+        left: 100%;
+        top: 0;
+        &.barrage-rocket{
+            top: 100px;
+        }
+        &.barrage-1{
+            top: 200px;
+        }
+        &.barrage-2{
+            top: 255px;
+        }
+        &.barrage-3{
+            top: 300px;
+        }
+        &.barrage-4{
+            top: 310px;
+        }
+        &.barrage-5{
+            top: 380px;
+        }
+        &.barrage-6{
+            top: 470px;
+        }
+        &.barrage-7{
+            top: 520px;
+        }
+        &.barrage-8{
+            top: 515px;
+        }
+        &.barrage-9{
+            top: 580px;
+        }
+        &.barrage-10{
+            top: 640px;
+        }
+        &.barrage-help{
+            top: 0;
+        }
+        &.barrage-look{
+            top: 0;
+        }
+        &.barrage-bird{
+            top: 720px;
+        }
+        img{
+            width: auto;
+            height: auto;
+        }
+    }
+}
+.page2-icon{
+    width: 488px;
+    height: 85px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -244px;
+    background-image: url(../images/page2-icon.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 488px 85px;
+    background-size: 488px 85px;
+}
 
 
 
@@ -487,9 +534,9 @@ html{
         transform: translate(-50%, -50%);
     }
     background-image: url(../images/icon_loading.gif);
-    background-size: px2rem(32px) px2rem(32px);
+    background-size: 32px 32px;
     background-repeat: no-repeat;
-    width: px2rem(32px);
-    height: px2rem(32px);
+    width: 32px;
+    height: 32px;
     transform: translate(50%,50%);
 }
