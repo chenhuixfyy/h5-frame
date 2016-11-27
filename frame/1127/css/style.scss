@@ -1,0 +1,495 @@
+@function px2rem($px, $base-font-size: 64px) {
+    @if (unitless($px)) {
+        @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+        @return px2rem($px + 0px); // That may fail.
+    } @else if (unit($px) == rem) {
+        @return $px;
+    }
+    @return ($px / $base-font-size) * 1rem;
+}
+/* font-size px*/
+@mixin font-dpr($font-size){
+    font-size: $font-size;
+
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+
+html{
+    height: 100%;
+    body{
+        width: 100%;
+        max-width: px2rem(640px)!important;
+        margin: 0 auto;
+        height: 100%;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+.wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    .content{
+        position: relative;
+        height: auto;
+    }
+    section{
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+    }
+    .section-1{
+        background-image: url(../images/page-1-bg.jpg);
+    }
+    .section-2{
+        background-image: url(../images/page-2-bg.jpg);
+    }
+    .section-3{
+        background-color: #f00;
+    }
+    .section-4{
+        background-color: #00f;
+    }
+    .section-5{
+        background-color: #0ff;
+    }
+}
+.text-title{
+    width: px2rem(512px);
+    height: px2rem(278px);
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: px2rem(60px);
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    .text-1{
+        width: px2rem(512px);
+        height: px2rem(230px);
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-image: url(../images/text-1.png); 
+        -webkit-background-size: px2rem(512px) px2rem(230px);
+        background-size: px2rem(512px) px2rem(230px);
+        opacity: 0;
+    }
+    .text-2{
+        width: px2rem(512px);
+        height: px2rem(48px);
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-image: url(../images/text-2.png); 
+        -webkit-background-size: px2rem(512px) px2rem(48px);
+        background-size: px2rem(512px) px2rem(48px);
+        opacity: 0;
+    }
+}
+.box-wrap{
+    width: px2rem(581px);
+    height: px2rem(504px);
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    .page-box-1{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        .box-1{
+            position: absolute;
+            bottom: px2rem(90px);
+            left: 150%;
+            opacity: 0;
+            -webkit-transform: translate(-50%,0);
+            transform: translate(-50%,0);
+            width: px2rem(314px);
+            height: px2rem(344px);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-image: url(../images/box-1.png);
+            -webkit-background-size: px2rem(314px) px2rem(344px);
+            background-size: px2rem(314px) px2rem(344px);
+            &.shake{
+                -webkit-animation:shake 1s infinite;
+                animation:shake 1s infinite;
+            }
+        }
+        .box-1-sd{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            display: none;
+            -webkit-transform: translate(-50%,0);
+            transform: translate(-50%,0);
+            width: px2rem(477px);
+            height: px2rem(115px);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-image: url(../images/box-1-sd.png);
+            -webkit-background-size: px2rem(477px) px2rem(115px);
+            background-size: px2rem(477px) px2rem(115px);
+        }
+    }
+    .page-box-2{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-image: url(../images/box-2.png); 
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+        .box-top{
+            width: px2rem(330px);
+            height: px2rem(330px);
+            position: absolute;
+            left: px2rem(116px);
+            top: px2rem(40px);
+            -webkit-transform:rotate(-40deg);
+            transform:rotate(-40deg);
+            &.shadow{
+                background-position: center bottom;
+                background-repeat: no-repeat;
+                background-image: url(../images/box-top-sd.png); 
+                -webkit-background-size: px2rem(330px) px2rem(330px);
+                background-size: px2rem(330px) px2rem(330px);
+            }
+            .box-top-main{
+                width: 100%;
+                height: 100%;
+                background-position: center bottom;
+                background-repeat: no-repeat;
+                background-image: url(../images/box-top.png); 
+                -webkit-background-size: 100% 100%;
+                background-size: 100% 100%;
+
+            }
+        } 
+        .ribbon-wrap{
+            width: px2rem(100px);
+            height: px2rem(100px);
+            position: relative;
+            margin: px2rem(80px) auto 0;
+            .ribbon{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                -webkit-transform: scale(0.1);
+                transform: scale(0.1);
+                -webkit-background-size: 100% 100%;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                opacity: 0;
+                -webkit-transform-origin: center bottom;
+                transform-origin: center bottom;
+                z-index: 1;
+                &.ribbon-1{
+                    width: px2rem(129px);
+                    height: px2rem(300px);
+                    background-image: url(../images/ribbon-1.png);
+                    z-index: 2; 
+                }
+                &.ribbon-2{
+                    width: px2rem(92px);
+                    height: px2rem(181px);
+                    background-image: url(../images/ribbon-2.png); 
+                }
+                &.ribbon-3{
+                    width: px2rem(134px);
+                    height: px2rem(93px);
+                    background-image: url(../images/ribbon-3.png); 
+                }
+                &.ribbon-4{
+                    width: px2rem(106px);
+                    height: px2rem(179px);
+                    background-image: url(../images/ribbon-4.png); 
+                }
+                &.ribbon-5{
+                    width: px2rem(236px);
+                    height: px2rem(265px);
+                    background-image: url(../images/ribbon-5.png); 
+                }
+                &.ribbon-6{
+                    width: px2rem(49px);
+                    height: px2rem(49px);
+                    background-image: url(../images/ribbon-6.png); 
+                }
+                &.ribbon-7{
+                    width: px2rem(30px);
+                    height: px2rem(29px);
+                    background-image: url(../images/ribbon-7.png); 
+                }
+                &.ribbon-8{
+                    width: px2rem(76px);
+                    height: px2rem(59px);
+                    background-image: url(../images/ribbon-8.png); 
+                }
+                &.ribbon-9{
+                    width: px2rem(17px);
+                    height: px2rem(18px);
+                    background-image: url(../images/ribbon-9.png); 
+                }
+                &.ribbon-10{
+                    width: px2rem(18px);
+                    height: px2rem(18px);
+                    background-image: url(../images/ribbon-10.png); 
+                }
+                &.ribbon-11{
+                    width: px2rem(20px);
+                    height: px2rem(22px);
+                    background-image: url(../images/ribbon-11.png); 
+                }
+                &.ribbon-12{
+                    width: px2rem(26px);
+                    height: px2rem(31px);
+                    background-image: url(../images/ribbon-12.png); 
+                }
+                &.ribbon-13{
+                    width: px2rem(24px);
+                    height: px2rem(37px);
+                    background-image: url(../images/ribbon-13.png); 
+                }
+                &.ribbon-14{
+                    width: px2rem(25px);
+                    height: px2rem(33px);
+                    background-image: url(../images/ribbon-14.png); 
+                }
+                &.ribbon-15{
+                    width: px2rem(29px);
+                    height: px2rem(29px);
+                    background-image: url(../images/ribbon-15.png); 
+                }
+                &.ribbon-16{
+                    width: px2rem(19px);
+                    height: px2rem(34px);
+                    background-image: url(../images/ribbon-16.png); 
+                }
+                &.ribbon-17{
+                    width: px2rem(33px);
+                    height: px2rem(26px);
+                    background-image: url(../images/ribbon-17.png); 
+                }
+                &.ribbon-18{
+                    width: px2rem(19px);
+                    height: px2rem(34px);
+                    background-image: url(../images/ribbon-18.png); 
+                }
+                &.ribbon-19{
+                    width: px2rem(20px);
+                    height: px2rem(20px);
+                    background-image: url(../images/ribbon-19.png); 
+                }
+                &.ribbon-20{
+                    width: px2rem(28px);
+                    height: px2rem(17px);
+                    background-image: url(../images/ribbon-20.png); 
+                }
+                &.ribbon-21{
+                    width: px2rem(35px);
+                    height: px2rem(22px);
+                    background-image: url(../images/ribbon-21.png); 
+                }
+                &.ribbon-22{
+                    width: px2rem(34px);
+                    height: px2rem(37px);
+                    background-image: url(../images/ribbon-22.png); 
+                }
+                &.ribbon-23{
+                    width: px2rem(21px);
+                    height: px2rem(45px);
+                    background-image: url(../images/ribbon-23.png); 
+                }
+                &.ribbon-24{
+                    width: px2rem(13px);
+                    height: px2rem(20px);
+                    background-image: url(../images/ribbon-24.png); 
+                }
+                &.ribbon-25{
+                    width: px2rem(20px);
+                    height: px2rem(25px);
+                    background-image: url(../images/ribbon-25.png); 
+                }
+                &.ribbon-26{
+                    width: px2rem(16px);
+                    height: px2rem(58px);
+                    background-image: url(../images/ribbon-26.png); 
+                }
+                &.ribbon-27{
+                    width: px2rem(44px);
+                    height: px2rem(39px);
+                    background-image: url(../images/ribbon-27.png); 
+                }
+                &.ribbon-28{
+                    width: px2rem(30px);
+                    height: px2rem(60px);
+                    background-image: url(../images/ribbon-28.png); 
+                }
+                &.ribbon-29{
+                    width: px2rem(57px);
+                    height: px2rem(77px);
+                    background-image: url(../images/ribbon-29.png); 
+                }
+                &.ribbon-30{
+                    width: px2rem(12px);
+                    height: px2rem(11px);
+                    background-image: url(../images/ribbon-30.png); 
+                }
+                &.ribbon-31{
+                    width: px2rem(27px);
+                    height: px2rem(54px);
+                    background-image: url(../images/ribbon-31.png); 
+                }
+                &.ribbon-32{
+                    width: px2rem(62px);
+                    height: px2rem(55px);
+                    background-image: url(../images/ribbon-32.png); 
+                }
+                &.ribbon-33{
+                    width: px2rem(37px);
+                    height: px2rem(57px);
+                    background-image: url(../images/ribbon-33.png); 
+                }
+                &.ribbon-34{
+                    width: px2rem(10px);
+                    height: px2rem(9px);
+                    background-image: url(../images/ribbon-34.png); 
+                }
+            }
+        }
+    }
+
+}
+@-webkit-keyframes shake { 
+    10% {
+        -webkit-transform: translate(-50%,0) rotate(2deg);
+        transform: translate(-50%,0) rotate(2deg);
+    }
+    20% {
+        -webkit-transform: translate(-50%,0) rotate(-2deg);
+        transform: translate(-50%,0) rotate(-2deg);
+    }
+    30% {
+        -webkit-transform: translate(-50%,0) rotate(2deg);
+        transform: translate(-50%,0) rotate(2deg);
+    }
+    40% {
+        -webkit-transform: translate(-50%,0) rotate(-2deg);
+        transform: translate(-50%,0) rotate(-2deg);
+    }
+    50% {
+        -webkit-transform: translate(-50%,0) rotate(1deg);
+        transform: translate(-50%,0) rotate(1deg);
+    }
+    60% {
+        -webkit-transform: translate(-50%,0) rotate(-1deg);
+        transform: translate(-50%,0) rotate(-1deg);
+    }
+    70% {
+        -webkit-transform: translate(-50%,0) rotate(1deg);
+        transform: translate(-50%,0) rotate(1deg);
+    }
+    80% {
+        -webkit-transform: translate(-50%,0) rotate(-1deg);
+        transform: translate(-50%,0) rotate(-1deg);
+    }
+    90% {
+        -webkit-transform: translate(-50%,0) rotate(0deg);
+        transform: translate(-50%,0) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translate(-50%,0) rotate(0deg);
+        transform: translate(-50%,0) rotate(0deg);
+    }
+} 
+@keyframes shake { 
+    10% {
+        -webkit-transform: translate(-50%,0) rotate(2deg);
+        transform: translate(-50%,0) rotate(2deg);
+    }
+    20% {
+        -webkit-transform: translate(-50%,0) rotate(-2deg);
+        transform: translate(-50%,0) rotate(-2deg);
+    }
+    30% {
+        -webkit-transform: translate(-50%,0) rotate(2deg);
+        transform: translate(-50%,0) rotate(2deg);
+    }
+    40% {
+        -webkit-transform: translate(-50%,0) rotate(-2deg);
+        transform: translate(-50%,0) rotate(-2deg);
+    }
+    50% {
+        -webkit-transform: translate(-50%,0) rotate(1deg);
+        transform: translate(-50%,0) rotate(1deg);
+    }
+    60% {
+        -webkit-transform: translate(-50%,0) rotate(-1deg);
+        transform: translate(-50%,0) rotate(-1deg);
+    }
+    70% {
+        -webkit-transform: translate(-50%,0) rotate(1deg);
+        transform: translate(-50%,0) rotate(1deg);
+    }
+    80% {
+        -webkit-transform: translate(-50%,0) rotate(-1deg);
+        transform: translate(-50%,0) rotate(-1deg);
+    }
+    90% {
+        -webkit-transform: translate(-50%,0) rotate(0deg);
+        transform: translate(-50%,0) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translate(-50%,0) rotate(0deg);
+        transform: translate(-50%,0) rotate(0deg);
+    }
+} 
+
+
+
+
+
+
+
+.loading-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: #FFF;
+    display: none;
+}
+.loading {
+    &.center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    background-image: url(../images/icon_loading.gif);
+    background-size: px2rem(32px) px2rem(32px);
+    background-repeat: no-repeat;
+    width: px2rem(32px);
+    height: px2rem(32px);
+    transform: translate(50%,50%);
+}

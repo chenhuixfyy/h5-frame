@@ -1,59 +1,31 @@
 /* font-size px*/
-body {
-  width: 10rem;
-  height: 17.78667rem;
-  background-size: 10rem 17.78667rem;
-  background-repeat: no-repeat;
-  background-color: #f5f5f5; }
+html {
+  height: 100%; }
+  html body {
+    width: 100%;
+    max-width: 10rem !important;
+    margin: 0 auto;
+    height: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
 
-header {
-  width: 10rem;
-  height: 2.52rem;
-  background-color: #289bf0; }
-
-section {
-  margin: 0.26667rem 0.21333rem;
-  height: 6.66667rem;
-  background-color: #FFF;
-  font-size: 15px;
-  color: #289bf0; }
-  [data-dpr="2"] section {
-    font-size: 30px; }
-  [data-dpr="3"] section {
-    font-size: 45px; }
-
-.blank-page {
-  height: 100%;
-  width: 100%;
-  padding-top: 0.98667rem; }
-  .blank-page .blank-icon {
-    margin: 0rem auto; }
-  .blank-page .blank-text {
-    margin-top: 0.49333rem;
-    color: #999999;
-    font-size: 14px;
-    text-align: center; }
-    [data-dpr="2"] .blank-page .blank-text {
-      font-size: 28px; }
-    [data-dpr="3"] .blank-page .blank-text {
-      font-size: 42px; }
-
-.loading-page {
+.text-wrap {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   position: relative; }
-
-.loading {
-  background-image: url("../images/gif/loading.gif");
-  background-size: 0.53333rem 0.53333rem;
-  background-repeat: no-repeat;
-  width: 0.53333rem;
-  height: 0.53333rem;
-  transform: translate(50%, 50%); }
-  .loading.center {
+  .text-wrap .text-item {
+    display: block;
+    white-space: nowrap;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); }
+    top: 0;
+    left: 100%; }
+  .text-wrap .text-item:last-child {
+    left: 150%;
+    top: 2.66667rem;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
 
 /*# sourceMappingURL=style.css.map */

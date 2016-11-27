@@ -1,0 +1,389 @@
+/* font-size px*/
+html {
+  height: 100%; }
+  html body {
+    width: 100%;
+    max-width: 10rem !important;
+    margin: 0 auto;
+    height: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1; }
+  .wrapper .content {
+    position: relative;
+    height: auto; }
+  .wrapper section {
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative; }
+  .wrapper .section-1 {
+    background-image: url(../images/page-1-bg.jpg); }
+  .wrapper .section-2 {
+    background-image: url(../images/page-2-bg.jpg); }
+  .wrapper .section-3 {
+    background-color: #f00; }
+  .wrapper .section-4 {
+    background-color: #00f; }
+  .wrapper .section-5 {
+    background-color: #0ff; }
+
+.text-title {
+  width: 8rem;
+  height: 4.34375rem;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 0.9375rem;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0); }
+  .text-title .text-1 {
+    width: 8rem;
+    height: 3.59375rem;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-image: url(../images/text-1.png);
+    -webkit-background-size: 8rem 3.59375rem;
+    background-size: 8rem 3.59375rem;
+    opacity: 0; }
+  .text-title .text-2 {
+    width: 8rem;
+    height: 0.75rem;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-image: url(../images/text-2.png);
+    -webkit-background-size: 8rem 0.75rem;
+    background-size: 8rem 0.75rem;
+    opacity: 0; }
+
+.box-wrap {
+  width: 9.07813rem;
+  height: 7.875rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0); }
+  .box-wrap .page-box-1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0; }
+    .box-wrap .page-box-1 .box-1 {
+      position: absolute;
+      bottom: 1.40625rem;
+      left: 150%;
+      opacity: 0;
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      width: 4.90625rem;
+      height: 5.375rem;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      background-image: url(../images/box-1.png);
+      -webkit-background-size: 4.90625rem 5.375rem;
+      background-size: 4.90625rem 5.375rem; }
+      .box-wrap .page-box-1 .box-1.shake {
+        -webkit-animation: shake 1s infinite;
+        animation: shake 1s infinite; }
+    .box-wrap .page-box-1 .box-1-sd {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      display: none;
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      width: 7.45313rem;
+      height: 1.79688rem;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      background-image: url(../images/box-1-sd.png);
+      -webkit-background-size: 7.45313rem 1.79688rem;
+      background-size: 7.45313rem 1.79688rem; }
+  .box-wrap .page-box-2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-image: url(../images/box-2.png);
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%; }
+    .box-wrap .page-box-2 .box-top {
+      width: 5.15625rem;
+      height: 5.15625rem;
+      position: absolute;
+      left: 1.8125rem;
+      top: 0.625rem;
+      -webkit-transform: rotate(-40deg);
+      transform: rotate(-40deg); }
+      .box-wrap .page-box-2 .box-top.shadow {
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-image: url(../images/box-top-sd.png);
+        -webkit-background-size: 5.15625rem 5.15625rem;
+        background-size: 5.15625rem 5.15625rem; }
+      .box-wrap .page-box-2 .box-top .box-top-main {
+        width: 100%;
+        height: 100%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-image: url(../images/box-top.png);
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%; }
+    .box-wrap .page-box-2 .ribbon-wrap {
+      width: 1.5625rem;
+      height: 1.5625rem;
+      position: relative;
+      margin: 1.25rem auto 0; }
+      .box-wrap .page-box-2 .ribbon-wrap .ribbon {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        opacity: 0;
+        -webkit-transform-origin: center bottom;
+        transform-origin: center bottom;
+        z-index: 1; }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-1 {
+          width: 2.01563rem;
+          height: 4.6875rem;
+          background-image: url(../images/ribbon-1.png);
+          z-index: 2; }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-2 {
+          width: 1.4375rem;
+          height: 2.82813rem;
+          background-image: url(../images/ribbon-2.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-3 {
+          width: 2.09375rem;
+          height: 1.45313rem;
+          background-image: url(../images/ribbon-3.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-4 {
+          width: 1.65625rem;
+          height: 2.79688rem;
+          background-image: url(../images/ribbon-4.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-5 {
+          width: 3.6875rem;
+          height: 4.14063rem;
+          background-image: url(../images/ribbon-5.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-6 {
+          width: 0.76563rem;
+          height: 0.76563rem;
+          background-image: url(../images/ribbon-6.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-7 {
+          width: 0.46875rem;
+          height: 0.45313rem;
+          background-image: url(../images/ribbon-7.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-8 {
+          width: 1.1875rem;
+          height: 0.92188rem;
+          background-image: url(../images/ribbon-8.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-9 {
+          width: 0.26563rem;
+          height: 0.28125rem;
+          background-image: url(../images/ribbon-9.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-10 {
+          width: 0.28125rem;
+          height: 0.28125rem;
+          background-image: url(../images/ribbon-10.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-11 {
+          width: 0.3125rem;
+          height: 0.34375rem;
+          background-image: url(../images/ribbon-11.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-12 {
+          width: 0.40625rem;
+          height: 0.48438rem;
+          background-image: url(../images/ribbon-12.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-13 {
+          width: 0.375rem;
+          height: 0.57813rem;
+          background-image: url(../images/ribbon-13.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-14 {
+          width: 0.39063rem;
+          height: 0.51563rem;
+          background-image: url(../images/ribbon-14.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-15 {
+          width: 0.45313rem;
+          height: 0.45313rem;
+          background-image: url(../images/ribbon-15.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-16 {
+          width: 0.29688rem;
+          height: 0.53125rem;
+          background-image: url(../images/ribbon-16.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-17 {
+          width: 0.51563rem;
+          height: 0.40625rem;
+          background-image: url(../images/ribbon-17.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-18 {
+          width: 0.29688rem;
+          height: 0.53125rem;
+          background-image: url(../images/ribbon-18.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-19 {
+          width: 0.3125rem;
+          height: 0.3125rem;
+          background-image: url(../images/ribbon-19.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-20 {
+          width: 0.4375rem;
+          height: 0.26563rem;
+          background-image: url(../images/ribbon-20.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-21 {
+          width: 0.54688rem;
+          height: 0.34375rem;
+          background-image: url(../images/ribbon-21.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-22 {
+          width: 0.53125rem;
+          height: 0.57813rem;
+          background-image: url(../images/ribbon-22.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-23 {
+          width: 0.32813rem;
+          height: 0.70313rem;
+          background-image: url(../images/ribbon-23.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-24 {
+          width: 0.20313rem;
+          height: 0.3125rem;
+          background-image: url(../images/ribbon-24.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-25 {
+          width: 0.3125rem;
+          height: 0.39063rem;
+          background-image: url(../images/ribbon-25.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-26 {
+          width: 0.25rem;
+          height: 0.90625rem;
+          background-image: url(../images/ribbon-26.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-27 {
+          width: 0.6875rem;
+          height: 0.60938rem;
+          background-image: url(../images/ribbon-27.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-28 {
+          width: 0.46875rem;
+          height: 0.9375rem;
+          background-image: url(../images/ribbon-28.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-29 {
+          width: 0.89063rem;
+          height: 1.20313rem;
+          background-image: url(../images/ribbon-29.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-30 {
+          width: 0.1875rem;
+          height: 0.17188rem;
+          background-image: url(../images/ribbon-30.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-31 {
+          width: 0.42188rem;
+          height: 0.84375rem;
+          background-image: url(../images/ribbon-31.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-32 {
+          width: 0.96875rem;
+          height: 0.85938rem;
+          background-image: url(../images/ribbon-32.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-33 {
+          width: 0.57813rem;
+          height: 0.89063rem;
+          background-image: url(../images/ribbon-33.png); }
+        .box-wrap .page-box-2 .ribbon-wrap .ribbon.ribbon-34 {
+          width: 0.15625rem;
+          height: 0.14063rem;
+          background-image: url(../images/ribbon-34.png); }
+
+@-webkit-keyframes shake {
+  10% {
+    -webkit-transform: translate(-50%, 0) rotate(2deg);
+    transform: translate(-50%, 0) rotate(2deg); }
+  20% {
+    -webkit-transform: translate(-50%, 0) rotate(-2deg);
+    transform: translate(-50%, 0) rotate(-2deg); }
+  30% {
+    -webkit-transform: translate(-50%, 0) rotate(2deg);
+    transform: translate(-50%, 0) rotate(2deg); }
+  40% {
+    -webkit-transform: translate(-50%, 0) rotate(-2deg);
+    transform: translate(-50%, 0) rotate(-2deg); }
+  50% {
+    -webkit-transform: translate(-50%, 0) rotate(1deg);
+    transform: translate(-50%, 0) rotate(1deg); }
+  60% {
+    -webkit-transform: translate(-50%, 0) rotate(-1deg);
+    transform: translate(-50%, 0) rotate(-1deg); }
+  70% {
+    -webkit-transform: translate(-50%, 0) rotate(1deg);
+    transform: translate(-50%, 0) rotate(1deg); }
+  80% {
+    -webkit-transform: translate(-50%, 0) rotate(-1deg);
+    transform: translate(-50%, 0) rotate(-1deg); }
+  90% {
+    -webkit-transform: translate(-50%, 0) rotate(0deg);
+    transform: translate(-50%, 0) rotate(0deg); }
+  100% {
+    -webkit-transform: translate(-50%, 0) rotate(0deg);
+    transform: translate(-50%, 0) rotate(0deg); } }
+@keyframes shake {
+  10% {
+    -webkit-transform: translate(-50%, 0) rotate(2deg);
+    transform: translate(-50%, 0) rotate(2deg); }
+  20% {
+    -webkit-transform: translate(-50%, 0) rotate(-2deg);
+    transform: translate(-50%, 0) rotate(-2deg); }
+  30% {
+    -webkit-transform: translate(-50%, 0) rotate(2deg);
+    transform: translate(-50%, 0) rotate(2deg); }
+  40% {
+    -webkit-transform: translate(-50%, 0) rotate(-2deg);
+    transform: translate(-50%, 0) rotate(-2deg); }
+  50% {
+    -webkit-transform: translate(-50%, 0) rotate(1deg);
+    transform: translate(-50%, 0) rotate(1deg); }
+  60% {
+    -webkit-transform: translate(-50%, 0) rotate(-1deg);
+    transform: translate(-50%, 0) rotate(-1deg); }
+  70% {
+    -webkit-transform: translate(-50%, 0) rotate(1deg);
+    transform: translate(-50%, 0) rotate(1deg); }
+  80% {
+    -webkit-transform: translate(-50%, 0) rotate(-1deg);
+    transform: translate(-50%, 0) rotate(-1deg); }
+  90% {
+    -webkit-transform: translate(-50%, 0) rotate(0deg);
+    transform: translate(-50%, 0) rotate(0deg); }
+  100% {
+    -webkit-transform: translate(-50%, 0) rotate(0deg);
+    transform: translate(-50%, 0) rotate(0deg); } }
+.loading-page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #FFF;
+  display: none; }
+
+.loading {
+  background-image: url(../images/icon_loading.gif);
+  background-size: 0.5rem 0.5rem;
+  background-repeat: no-repeat;
+  width: 0.5rem;
+  height: 0.5rem;
+  transform: translate(50%, 50%); }
+  .loading.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+
+/*# sourceMappingURL=style.css.map */

@@ -10,6 +10,7 @@
     <script type="text/javascript" src="js/flexible.debug.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="shortcut icon" href="./favicon.ico">
     <link rel="Bookmark" href="./favicon.ico"> -->
@@ -40,21 +41,39 @@
     </style>
 </head>
 <body>
-    <header>
+    <div id="wraper">
+        <section class="section">
+        1
+        </section>
+        <section class="section">
+            <div class="text-wrap">
+                <span class="text-item">躲过了双11，没想到还有双12！</span>
+                <span class="text-item">凡是能用钱解决的问题，我现在都解决不了了。</span>
+                <span class="text-item">我眼睛好像近视了，打开钱包都看不到钱了。</span>
+                <span class="text-item">你们经过草坪的时候小心点行么？不要弄脏了我要吃的土。</span>
+                <span class="text-item">只有不够剁的手，算不清的帐，没有不搞事的电商。</span>
+                <span class="text-item">该条弹幕来自我的双脚.......</span>
+                <span class="text-item">帮我过双12</span>
+            </div>
+        </section>
+        <section class="section">
+        3
+        </section>
+        <section class="section">
+        4
+        </section>
+        <section class="section">
+        5
+        </section>
         
-    </header>
-    <section>
-        <div>重点关注</div>
-    </section>
-    <!-- <div id="test">
-        <div class="one">one</div>
-        <div class="two">two</div>
-    </div> -->
-
+    </div>
+    <!-- <button id="start">滚动</button> -->
 
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/hammer.min.js"></script>
+    <!-- <script type="text/javascript" src="js/hammer.min.js"></script> -->
     <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
     $(function(argument) {
         // delete Hammer.defaults.cssProps.userSelect;
@@ -71,7 +90,7 @@
         // TweenPlugin.activate([BezierPlugin,CSSPlugin]);
         $('div').click(function(event) {
             // var tween = TweenMax.to($(this),1,{x:200,y:300,repeat:-1,yoyo:true,ease:Elastic.easeOut});
-            var tween = TweenMax.to($(this),3, {bezier:{type:"cubic", values:[{x:100, y:250}, {x:150, y:100}, {x:300, y:500}, {x:500, y:400}], autoRotate:["x","y","rotation",45,false]}, ease:Power1.easeInOut});
+            // var tween = TweenMax.to($(this),3, {bezier:{type:"cubic", values:[{x:100, y:250}, {x:150, y:100}, {x:300, y:500}, {x:500, y:400}], autoRotate:["x","y","rotation",45,false]},scale:1.5, ease:Power1.easeInOut});
             // var beziers = BezierPlugin.bezierThrough([{x:0, y:0}, {x:250, y:400}, {x:500, y:0}], 1, true);
             // var bx = beziers.x; //the "x" Beziers
             // var by = beziers.y; //the "y" Beziers
