@@ -113,7 +113,7 @@ $(function() {
 
 	    				// 不手动话的话5秒后自动滑到第二页
 	    				setTimeout(function () {
-    						if(canSwipe){
+    						if(canSwipe&&page2Init){
 	    						page++;
 						        $content.css({
 						        	'-webkit-transition':'-webkit-transform 1s ease-in-out',
@@ -247,7 +247,7 @@ $(function() {
 		            'transform' : 'translate3d(0, -'+ page*pageH +'px, 0)'
 		        });
 		       	$('.section',$content).removeClass('page-active').eq(page).addClass('page-active');
-		       	canSwipe = false;
+		       	// canSwipe = false;
 		       	if(page2Init){
 		       		animationAll.page2();
 		       	}
