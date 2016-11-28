@@ -34,6 +34,13 @@
     <link rel="Bookmark" href="./favicon.ico"> -->
 </head>
 <body>
+    <!-- loading -->
+    <div class="loading-page">
+        <div class="loading center">
+            
+        </div>
+    </div>
+    <!-- 内容 -->
     <div id="wrapper" class="wrapper">
         <div class="content">
             <section class="section section-1">
@@ -98,6 +105,8 @@
                 </div>
             </section>
             <section class="section section-2">
+                <!-- 活动规则 -->
+                <a href="javascript:void(0)" class="active-prize">活动奖品</a>
                 <!-- 弹幕 -->
                 <div class="barrage-wrap">
                     <span class="barrage-rocket">
@@ -133,22 +142,24 @@
                     <span class="barrage-item barrage-10">
                         <img src="images/barrage-10.png" alt="">
                     </span>
-                    <!-- <span class="barrage-help">
-                        <img src="images/barrage-1.png" alt="">
+                    <span class="barrage-help">
+                        <img src="images/barrage-help.png" alt="">
                     </span>
-                    <span class="barrage-look">
-                        <img src="images/barrage-1.png" alt="">
-                    </span> -->
+                    <span class="barrage-card">
+                        <img src="images/barrage-card.png" alt="">
+                    </span>
                     <span class="barrage-bird">
                         <img src="images/barrage-bird.png" alt="">
                     </span>
+                    <!-- 手型 -->
+                    <span class="hand"></span>
                 </div>
                 <!-- 模拟送礼物按钮 -->
                 <div class="page2-icon">
                     
                 </div>
             </section>
-            <section class="section section-3">
+            <!-- <section class="section section-3">
             3
             </section>
             <section class="section section-4">
@@ -156,15 +167,49 @@
             </section>
             <section class="section section-5">
             5
-            </section>
+            </section> -->
         </div>
         
     </div>
-    <div class="loading-page">
-        <div class="loading center">
+    <!-- 各种弹层 -->
+    <div class="popup-wrap">
+        <!-- 活动奖品 -->
+        <div class="popup popup-prize" id="popup-prize">
             
         </div>
+        <!-- 引导分享 -->
+        <div class="popup popup-share" id="popup-share">
+            
+        </div>
+        <!-- 心愿卡 -->
+        <div class="popup popup-card" id="popup-card">
+            
+            <div class="heart-wrap total-1">
+                <span class="heart-1"></span>
+                <span class="heart-2"></span>
+                <span class="heart-3"></span>
+            </div>
+            <div class="btn-wrap">
+                <a href="javascript:void(0)" class="light"></a>
+                <a href="javascript:void(0)" class="get"></a>
+            </div>
+        </div>
+        <!-- 二维码 -->
+        <div class="popup popup-code" id="popup-code">
+            <img src="images/qrcode.png" alt="">
+        </div>
     </div>
+    <!-- 音效 -->
+
+    <audio id="musicfx">
+        <source>
+    </audio>
+
+    <!-- 音效控制 -->
+    <span id="musicControl">
+        <a id="mc_play" class="stop">
+        </a>
+    </span>
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/hammer.min.js"></script>
     <script type="text/javascript" src="js/TweenMax.min.js"></script>
