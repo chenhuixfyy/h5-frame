@@ -1,5 +1,6 @@
-$(function() {
+// $(function() {
 	var $barrageItem = $('.barrage-wrap .barrage-item'),
+    	box1 = $('.box-1'),
 		pageW=parseInt($('body').width()),
     	pageH=parseInt($('body').height()),
     	$content = $('.content'),
@@ -31,16 +32,54 @@ $(function() {
     var hammerElement = new Hammer(document.getElementById('wrapper'));
     hammerElement.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
 
-    var box1 = $('.box-1');
+    // 通过判断用户状态来显示不同的起始页
+    pageStart = function (type) {
+    	console.log(type)
+    	switch (type) {
+    		case '1':
+		    	// case1-已关注且首次点心
+				myAudio.src='media/heart.mp3';
+				$('#musicfx').attr('loop','loop');
+	        	myAudio.play();
+		    	$('.popup-wrap,.popup-card').show();
+		    	$('.popup-card').addClass('unbind');
+		    	$('.popup-card a').css('display','block');
+    			break;
+    		case '2':
+		    	// case2-未关注
+		    	$('.popup-wrap,.popup-code').show();
+		    	$('.popup-code').addClass('unbind');
+    			break;
+    		case '3':
+		    	// case3-已关注且点心，提示助力成功？
+		    	alert('助力成功');
+		    	animationAll.page1();
+    			break;
+    		default:
+		    	// 不传值-已关注且点心，提示助力成功？
+		    	alert('助力成功');
+		    	animationAll.page1();
+    			break;
+    	}
+
+
+
+
+    }
     // 动画
-    var animationAll = {
+   	var animationAll = {
     	page1: function() {
     		// 第一屏动画
     		// 盒子进来音效
-			myAudio.src='media/duang.mp3';
-        	myAudio.play();
+			// myAudio.src='media/duang.mp3';
+    		//myAudio.play();
+
+            var startAudio = new Audio();
+			startAudio.src = 'media/duang.mp3';
+			startAudio.autoplay = true;
+			startAudio.play();
 			// myAudio.addEventListener('canplaythrough',function() {
-   //          	myAudio.play();
+             	// myAudio.play();
 			// })
     		TweenMax.to(box1, 2, {left:'50%', opacity:1, ease: Elastic.easeOut,onComplete:function(e){
     			box1.addClass('shake');
@@ -49,8 +88,13 @@ $(function() {
 			    	$('.page-box-1').hide();
 			    	$('.page-box-2').show();
 				    // 打开盒子音效Boom音效
-					myAudio.src='media/boom.mp3';
-		            myAudio.play();
+					// myAudio.src='media/boom.mp3';
+		   			// myAudio.play();
+
+		            var boxAudio = new Audio();
+					boxAudio.src = 'media/boom.mp3';
+					boxAudio.autoplay = true;
+					boxAudio.play();
 		            /*myAudio.onended = function() {
 						myAudio.src='media/bgm.mp3';
 			            myAudio.play();
@@ -195,17 +239,6 @@ $(function() {
 
 
 							showPopup('popup-card');
-
-
-
-							// 临时听心跳音乐
-							myAudio.src='media/heart.mp3';
-							$('#musicControl').hide().find('a').removeClass('on');
-							// $('#musicfx').attr('loop','1');
-							// myAudio.addEventListener("ended",function() {
-						 //        myAudio.pause();
-						 //    });
-					        myAudio.play();
 						});
 				 	}});
 				 	
@@ -214,11 +247,11 @@ $(function() {
 		 	
 	    }
     };
-    setTimeout(function(){
+    // setTimeout(function(){
 
-	    animationAll.page1();
+	    // animationAll.page1();
 	    // animationAll.page2();
-	},1000);
+	// },1000);
 	    // $content.css({
 	    // 	'-webkit-transition':'-webkit-transform 1s ease-in-out',
 	    //     'transition':'transform 1s ease-in-out',
@@ -287,7 +320,7 @@ $(function() {
         hammerPopup.on('tap',function(ev) {
 			var elem = $(ev.target);
 			// console.log(elem);
-			if(elem.hasClass('popup')){
+			if(elem.hasClass('popup')&&!elem.hasClass('unbind')){
 				$('.popup-wrap').fadeOut(function() {
 					// elem.hide();
 					$('.popup').hide().css('z-index', '1');
@@ -330,7 +363,7 @@ $(function() {
 
 
 
-	// 点亮心愿
+	// 帮好友点亮心愿
 	new Hammer(document.getElementsByClassName('light')[0]).on('tap', function(ev) {
 		// $.ajax({
 		// 	url: '/path/to/file',
@@ -343,7 +376,7 @@ $(function() {
 		// });
 		
 	});
-	// 领取奖品
+	// 领取奖品-参与活动
 	new Hammer(document.getElementsByClassName('get')[0]).on('tap', function(ev) {
 		// $.ajax({
 		// 	url: '/path/to/file',
@@ -352,13 +385,16 @@ $(function() {
 		// 	data: {param1: 'value1'},
 		// 	success:function (argument) {
 				
+				$('.popup-wrap').fadeOut(function() {
+            		myAudio.pause();
+					$('.popup').hide().css('z-index', '1').removeClass('unbind');
+    				$('.popup-card a').css('display','none');
+					animationAll.page1();
+				});
 		// 	}
 		// });
 		
 
-
-		// 临时显示二维码
-		// showPopup('popup-code');
 	});
 
-});
+// });

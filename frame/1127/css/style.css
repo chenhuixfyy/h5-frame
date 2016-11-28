@@ -521,7 +521,7 @@ html {
     .popup-wrap .btn-wrap a {
       width: 369px;
       height: 89px;
-      display: block;
+      display: none;
       margin: 30px auto 0;
       -webkit-box-shadow: 8px 7px 11px 2px rgba(14, 5, 11, 0.2);
       -moz-box-shadow: 8px 7px 11px 2px rgba(14, 5, 11, 0.2);
@@ -587,20 +587,35 @@ html {
   top: 0;
   left: 0;
   z-index: 9999;
-  background-color: #FFF;
-  display: none; }
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+  background-image: url(../images/page-2-bg.jpg);
+  overflow: hidden; }
 
 .loading {
   background-image: url(../images/icon_loading.gif);
   background-size: 32px 32px;
   background-repeat: no-repeat;
   width: 32px;
-  height: 32px;
-  transform: translate(50%, 50%); }
+  height: 32px; }
   .loading.center {
     position: absolute;
     left: 50%;
     top: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
+
+.percent {
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin-top: 40px; }
 
 /*# sourceMappingURL=style.css.map */
