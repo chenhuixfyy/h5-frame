@@ -17,20 +17,26 @@ html{
     overflow: hidden;
     position: relative;
     z-index: 1;
-    .content{
-        position: relative;
-        height: auto;
-    }
+    // .content{
+    //     position: relative;
+    //     height: auto;
+    // }
     section{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
         -webkit-background-size: cover;
         background-size: cover;
         background-position: center bottom;
-        position: relative;
     }
     .section-1{
+        z-index: 2;
         background-image: url(../images/page-1-bg.jpg);
     }
     .section-2{
+        z-index: 1;
         background-image: url(../images/page-2-bg.jpg);
     }
 }
@@ -45,6 +51,7 @@ html{
     -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0);
     .text-1{
+        position: relative;
         width: 512px;
         height: 230px;
         background-position: center bottom;
@@ -53,8 +60,13 @@ html{
         -webkit-background-size: 512px 230px;
         background-size: 512px 230px;
         opacity: 0;
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+        -webkit-transform-origin: center bottom;
+        transform-origin: center bottom;
     }
     .text-2{
+        position: relative;
         width: 512px;
         height: 48px;
         background-position: center bottom;
@@ -63,6 +75,10 @@ html{
         -webkit-background-size: 512px 48px;
         background-size: 512px 48px;
         opacity: 0;
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+        -webkit-transform-origin: center bottom;
+        transform-origin: center bottom;
     }
 }
 .box-wrap{
@@ -461,7 +477,7 @@ html{
         left: 100%;
         top: 0;
         &.barrage-rocket{
-            top: 100px;
+            top: 720px;
         }
         &.barrage-1{
             top: 200px;
@@ -493,54 +509,62 @@ html{
         &.barrage-10{
             top: 640px;
         }
-        &.barrage-help{
-            left: 150%;
-            -webkit-transform: translate(-50%,0);
-            transform: translate(-50%,0);
-            top: 350px;
-            cursor: pointer;
-            &.shadow{
-                -webkit-box-shadow: 13px 11px 23px 4px rgba(14,5,11,0.20);
-                -moz-box-shadow: 13px 11px 23px 4px rgba(14,5,11,0.20);
-                box-shadow: 13px 11px 23px 4px rgba(14,5,11,0.20);
-            }
-        }
-        &.barrage-card{
-            left: 150%;
-            -webkit-transform: translate(-50%,0);
-            transform: translate(-50%,0);
-            top: 500px;
-            cursor: pointer;
-            &.shadow{
-                -webkit-box-shadow: 13px 11px 23px 4px rgba(14,5,11,0.20);
-                -moz-box-shadow: 13px 11px 23px 4px rgba(14,5,11,0.20);
-                box-shadow: 13px 11px 23px 4px rgba(14,5,11,0.20);
-            }
-        }
         &.barrage-bird{
-            top: 720px;
-        }
-        &.hand{
-            width: 131px;
-            height: 136px;
-            position: absolute;
-            top: 440px;
-            left: 500px;
-            background-image: url(../images/hand.png);
-            background-position: center center;
-            background-repeat: no-repeat;
-            -webkit-background-size: 131px 136px;
-            background-size: 131px 136px;
-            opacity: 0;
-            &.show{
-                -webkit-animation:click 1s infinite ease-in-out;
-                animation:click 1s infinite ease-in-out;
-            }
+            top: 100px;
         }
         img{
             width: auto;
             height: auto;
         }
+    }
+}
+.barrage-help{
+    position: absolute;
+    top: 50%;
+    left: 150%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    z-index: 2;
+    &.shadow{
+        -webkit-box-shadow: 13px 11px 23px 4px rgba(14,5,11,0.20);
+        -moz-box-shadow: 13px 11px 23px 4px rgba(14,5,11,0.20);
+        box-shadow: 13px 11px 23px 4px rgba(14,5,11,0.20);
+    }
+}
+.barrage-card{
+    position: absolute;
+    top: 50%;
+    left: 150%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    margin-top: 120px;
+    z-index: 2;
+    &.shadow{
+        -webkit-box-shadow: 13px 11px 23px 4px rgba(14,5,11,0.20);
+        -moz-box-shadow: 13px 11px 23px 4px rgba(14,5,11,0.20);
+        box-shadow: 13px 11px 23px 4px rgba(14,5,11,0.20);
+    }
+}
+.hand{
+    width: 131px;
+    height: 136px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 32px;
+    margin-left: 180px;
+    background-image: url(../images/hand.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 131px 136px;
+    background-size: 131px 136px;
+    opacity: 0;
+    z-index: 3;
+    &.show{
+        -webkit-animation:click 1s infinite ease-in-out;
+        animation:click 1s infinite ease-in-out;
     }
 }
 // @-webkit-keyframes click { 
@@ -611,8 +635,14 @@ html{
     }
     // hearts
     .heart-wrap{
-        margin-top: 400px;
         text-align: center;
+        width: 100%;
+        height: 130px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
         span{
             width: 156px;
             height: 127px;
@@ -642,7 +672,14 @@ html{
     }
     // button
     .btn-wrap{
-        margin-top: 60px;
+        width: 100%;
+        height: 210px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        margin-top: 180px;
         a{
             width: 369px;
             height: 89px;
@@ -685,17 +722,17 @@ html{
     z-index:9999;
     a { 
         display:block;
-        width: 50px;
-        height: 50px;
+        width: 52px;
+        height: 52px;
         overflow:hidden;
-        background:url(../images/mcbg.png) no-repeat;
+        background-position: center center;
         -webkit-background-size:100%;
         background-size:100%;
         &.stop { 
-            background-position:left bottom;
+            background:url(../images/stop.png) no-repeat;
         }
         &.on{ 
-            background-position:0px 1px;
+            background:url(../images/on.png) no-repeat;
             -webkit-animation: reverseRotataZ 1.2s linear infinite;
             animation: reverseRotataZ 1.2s linear infinite;
         }
