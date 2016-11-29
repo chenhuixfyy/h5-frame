@@ -98,8 +98,8 @@ html{
         top: 0;
         .box-1{
             position: absolute;
-            bottom: 90px;
-            left: 150%;
+            bottom: 1000px;
+            left: 50%;
             opacity: 0;
             -webkit-transform: translate(-50%,0);
             transform: translate(-50%,0);
@@ -477,7 +477,7 @@ html{
         left: 100%;
         top: 0;
         &.barrage-rocket{
-            top: 720px;
+            top: 100px;
         }
         &.barrage-1{
             top: 200px;
@@ -489,10 +489,10 @@ html{
             top: 300px;
         }
         &.barrage-4{
-            top: 310px;
+            top: 350px;
         }
         &.barrage-5{
-            top: 380px;
+            top: 420px;
         }
         &.barrage-6{
             top: 470px;
@@ -501,16 +501,16 @@ html{
             top: 520px;
         }
         &.barrage-8{
-            top: 515px;
+            top: 575px;
         }
         &.barrage-9{
-            top: 580px;
+            top: 615px;
         }
         &.barrage-10{
-            top: 640px;
+            top: 670px;
         }
         &.barrage-bird{
-            top: 100px;
+            top: 740px;
         }
         img{
             width: auto;
